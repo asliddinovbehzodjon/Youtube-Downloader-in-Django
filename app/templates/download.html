@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="icon" href="{% static 'image/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>YouTube Downloader</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">
+            <i class="fab fa-youtube"></i>
+            YouTube Downloader
+        </h1>
+        
+        <div class="video__info">
+            <img src="{{url.thumbnail_url}}" alt="video rasmi">
+            <h1 class="video__title">
+               {{url.title}}
+            </h1>
+        </div>
+
+        <form method="POST" action="download" class="download">
+{% csrf_token %}
+            <select name="itag" class="form-select form-select-lg" >
+               
+                {% for i in streams  %}
+                  <option value="{{i.itag}}">{{i.resolution}}</option>
+                {% endfor %}
+                <option value="audio">Mp3</option>
+            </select>
+
+            <button id="download" class="btn btn-warning">Yuklash</button>
+
+        </form>
+
+        <a href="/" class="btn btn-danger">Bosh sahifaga o'tish</a>
+        <footer>
+          
+            <div class="creator">
+                 Creators:
+                <a href="https://www.youtube.com/channel/UCVXBGFDZ2ukLza6P134hHbA">Asliddinov.B</a>
+
+                &
+                <a href="https://www.youtube.com/channel/UCIJGYB8qXmXg15gEWL7IVXw">Khaitov.S</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

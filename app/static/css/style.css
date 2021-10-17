@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+   margin-top: 100px;
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+}
+
+.title{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    font-size: 40px;
+    align-items: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.fa-youtube{
+    color: #FF0000;
+    font-size: 40px;
+}
+.form{
+ display: flex;
+ justify-content: space-between;
+ gap: 30px;
+}
+.form input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+.form input::placeholder{
+    font-size: 18px;
+}
+.video__info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.video__title{
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.video__info img{
+    width: 50%;
+}
+.creator{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.creator a{
+    color: blue;
+    font-size: 30px;
+}
+
+.download{
+    display: flex;
+    gap: 30px;
+}
+.download select{
+    text-align: center;
+}
